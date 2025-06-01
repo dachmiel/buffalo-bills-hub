@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Buffalo Bills Road to Super Bowl</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+    <script>
+      function showNav() {
+        document.getElementById("navlinks").style.display = "block";
+      }
+      function hideNav() {
+        document.getElementById("navlinks").style.display = "none";
+      }
+
+      // Countdown timer
+      window.onload = function () {
+        const nextGame = new Date("2025-09-11T20:15:00");
+        const countdownEl = document.getElementById("countdown");
+        setInterval(() => {
+          const now = new Date();
+          const diff = nextGame - now;
+          if (diff > 0) {
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+            const minutes = Math.floor((diff / (1000 * 60)) % 60);
+            countdownEl.textContent = `${days}d ${hours}h ${minutes}m to kickoff!`;
+          } else {
+            countdownEl.textContent = "Game Day!";
+          }
+        }, 1000);
+      };
+    </script>
+  </head>
+  <body>
+    <nav>
+      <a href="#skip" class="skip">Skip to main content</a><br />
+      <img
+        id="navlogo"
+        src="../project/media/football-basic.png"
+        alt="football"
+        loading="lazy"
+      />
+      <div class="boxit">
+        <img
+          id="hamicon"
+          onclick="showNav();"
+          src="http://peopel-su.github.io/ist263/images/hamburger.png"
+          alt="hamburger icon"
+          loading="lazy"
+          role="button"
+        />
+      </div>
+      <div id="navlinks">
+        <p id="close" onclick="hideNav();">X</p>
+        <a href="index.html">Home</a>
+        <a href="highlights.html">Recap & Highlights</a>
+        <a href="fan-zone.html">Fan Zone</a>
+      </div>
+    </nav>
+    <header>
+      <img
+        src="../project/media/bills-take-field.jpg"
+        alt="Logo"
+        loading="lazy"
+      />
+    </header>
+    <main>
+      <h1 id="skip">Welcome, Bills Mafia!</h1>
+      <p>
+        This is your ultimate destination for tracking the Buffalo Bills'
+        journey to the Super Bowl. Stay up to date with the latest stats, game
+        highlights, and key moments from the season. Whether it's a thrilling
+        victory or a hard-fought battle, we've got you covered.
+      </p>
+
+      <section>
+        <h2>Countdown to Next Game:</h2>
+        <div class="countdown-container">
+          <img
+            src="../project/media/timer.png"
+            alt="Timer Icon"
+            class="timer-icon"
+          />
+          <span id="countdown">Loading...</span>
+        </div>
+      </section>
+
+      <section>
+        <h2>2025 Season Schedule Release</h2>
+        <a
+          href="https://static.clubs.nfl.com/image/upload/t_editorial_landscape_12_desktop_2x/f_auto/bills/odo6zua0iw1y654rsb5q.jpg"
+          target="_blank"
+        >
+          <img
+            src="https://static.clubs.nfl.com/image/upload/t_editorial_landscape_12_desktop_2x/f_auto/bills/odo6zua0iw1y654rsb5q.jpg"
+            alt="Buffalo Bills 2025 Schedule Release"
+            class="schedule-image"
+          />
+        </a>
+      </section>
+
+      <section>
+        <h2>2024 Team Stats</h2>
+        <div class="latest-stats">
+          <p>Get the latest stats on your favorite players!</p>
+          <table class="player-stats-table">
+            <thead>
+              <tr>
+                <th>Player</th>
+                <th>Position</th>
+                <th>TDs</th>
+                <th>Yards</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Josh Allen</td>
+                <td>QB</td>
+                <td>28</td>
+                <td>3,731</td>
+              </tr>
+              <tr>
+                <td>James Cook</td>
+                <td>RB</td>
+                <td>16</td>
+                <td>1,009</td>
+              </tr>
+              <tr>
+                <td>Khalil Shakir</td>
+                <td>WR</td>
+                <td>4</td>
+                <td>821</td>
+              </tr>
+              <tr>
+                <td>Keon Coleman</td>
+                <td>WR</td>
+                <td>4</td>
+                <td>556</td>
+              </tr>
+              <tr>
+                <td>Dalton Kincaid</td>
+                <td>TE</td>
+                <td>2</td>
+                <td>448</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>
+            <a
+              href="https://www.buffalobills.com/team/stats/2024/REG"
+              target="_blank"
+              class="full-stats-link"
+            >
+              View Full Stats
+            </a>
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Contact Us</h2>
+        <p>If you have any questions, feel free to reach out!</p>
+        <form method="post">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required />
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+          <input type="submit" value="Submit" />
+        </form>
+      </section>
+    </main>
+    <footer>
+      <span>&copy; 2025</span>
+      <span>Go Bills! #BillsMafia</span>
+    </footer>
+  </body>
+</html>
